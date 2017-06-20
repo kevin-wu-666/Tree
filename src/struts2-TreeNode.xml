@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="treenode" namespace="/treeNode" extends="struts-default">
+		<action name="*json" class="com.wjl.action.TreeNodeAction" method="{1}Node">
+			<result>/index.jsp</result>
+		</action>
+		<action name="confirm" class="com.wjl.action.ConfirmAction" method="confirm">
+			<result></result>
+		</action>
+	</package>
+</struts>    

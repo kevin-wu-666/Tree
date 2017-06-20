@@ -1,0 +1,432 @@
+@charset "UTF-8";
+
+    *{
+      padding:0px;
+      margin:0px;
+
+    }
+    video{
+      width:100%;
+      position: absolute;
+      left:0px;
+      bottom:0px;
+      z-index: 3;
+    }
+    .box{
+      width:100%;
+      height:100%;
+      min-width: 1200px;
+      min-height: 600px;
+      background:rgba(0,0,0,0);
+      position: absolute;
+      top:0px;
+      left:0px;
+      z-index: 4;
+    }
+    .loginpanel{
+      width:700px;
+      height:300px;
+      border: 4px solid white;
+      border-radius: 10px;
+      position:absolute;
+      top:50%;
+      left:50%;
+      margin-left: -350px;
+      margin-top: -150px;
+      z-index: 6;
+        display: block;
+
+
+    }
+      .userinfo{
+          width:650px;
+          height:180px;
+
+          position: absolute;
+          top:80px;
+          left:25px;
+
+      }
+      .systemName{
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+          width:100%;
+          height:46px;
+          position: absolute;
+          top:0px;
+          left:0px;
+          /*background: rgba(123, 255, 236, 0.7);*/
+          border-bottom: 4px solid white;
+
+      }
+      .time{
+          display: inline-block;
+          height:46px;
+          width:300px;
+          margin-left:50px;
+          font-size:18px;
+          color:white;
+          line-height: 46px;
+      }
+      .welcomeMessage{
+          display: block;
+          float:right;
+          height:46px;
+          width:200px;
+          margin-left:100px;
+          font-size:18px;
+          color:white;
+          line-height: 46px;
+      }
+      .userLogin{
+          width:70%;
+          height: 100%;
+
+          position: absolute;
+          top:0px;
+          left:30%;
+      }
+      .img{
+          width:27%;
+          height: 100%;
+          background:url(../img/user.jpg);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          position: absolute;
+          top:0px;
+          left:0;
+          border-radius: 10px;
+          border:8px solid white;
+      }
+      .userName  {
+          display: block;
+          width:90%;
+          height:40px;
+          background:rgba(0,0,0,0.5);
+          position: absolute;
+          left:5%;
+          top:30px;
+      }
+    .userName .fa-user-circle{
+        display:inline-block;
+        width:10%;
+        height:40px;
+        line-height: 40px;
+        font-size: 26px;
+        position: absolute;
+        top:0px;
+        left:0px;
+        color:white;
+        text-align: center;
+
+
+    }
+    .userName .fa-check{
+        display:inline-block;
+        width:10%;
+        height:40px;
+        line-height: 40px;
+        font-size: 26px;
+        position: absolute;
+        text-align: center;
+        top:0px;
+        left:90%;
+        color:white;
+    }
+    .userName input{
+        display:inline-block;
+        width:80%;
+        height:40px;
+        position: absolute;
+        top:0px;
+        left:10%;
+        outline: none;
+        font-size:26px;
+        line-height: 40px;
+        background:rgba(0,0,0,0.5);
+        border:none;
+        color:white;
+        padding-left:10px;
+
+    }
+    .userPassword{
+        display: block;
+        width:90%;
+        height:40px;
+        background:rgba(0,0,0,0.5);
+        position: absolute;
+        left:5%;
+        top:90px;
+    }
+    .userPassword .fa-lock{
+        display:inline-block;
+        width:10%;
+        height:40px;
+
+        position:absolute;
+        left:0;
+        top:0;
+        font-size: 26px;
+        text-align: center;
+        line-height: 40px;
+        color:white;
+    }
+    .userPassword .fa-eye-slash{
+        display:inline-block;
+        width:10%;
+        height:40px;
+
+        position:absolute;
+        left:90%;
+        top:0;
+        font-size: 26px;
+        text-align: center;
+        line-height: 40px;
+        color:white;
+    }
+      .userPassword .fa-eye{
+        display:none;
+        width:10%;
+        height:40px;
+
+        position:absolute;
+        left:90%;
+        top:0;
+        font-size: 26px;
+        text-align: center;
+        line-height: 40px;
+        color:white;
+    }
+    .userPassword input{
+        display:inline-block;
+        position: absolute;
+        top:0px;
+        left:10%;
+        width:80%;
+        height:40px;
+        outline:none;
+        border:none;
+        font-size:26px;
+        line-height: 40px;
+        background:rgba(0,0,0,0.5);
+        color:white;
+        padding-left:10px;
+    }
+    .operationBtn{
+        width: 50%;
+        height:40px;
+        position: absolute;
+        top:140px;
+        left:25%;
+        text-align: center;
+
+    }
+    .operationBtn button{
+        padding:5px 20px;
+        text-align: center;
+        margin-left:20px;
+    }
+    .regiserpanel{
+        width:360px;
+        height:500px;
+        border:6px solid white;
+        position:absolute;
+        top:10%;
+        left:50%;
+        margin-left: -180px;
+        display: none;
+        border-radius: 8px;
+        box-shadow: 10px 10px 10px #292929;
+    }
+    .registertitle{
+        width:100%;
+        height:10%;
+        position: absolute;
+        top:0px;
+        left:0px;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        border-bottom: 4px solid white;
+        line-height: 50px;
+        text-align: center;
+        font-style: italic;
+        font-size: 25px;
+
+        font-family: "微软雅黑";
+        color:white;
+    }
+    .registerPower{
+        width:100%;
+        height:10%;
+        position: absolute;
+        bottom:0px;
+        left:0px;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-top: 4px solid white;
+        line-height: 50px;
+        text-align: center;
+        font-style: italic;
+        font-size: 12px;
+
+        font-family: "微软雅黑";
+        color:white;
+
+    }
+    .registerUsers{
+        width:100%;
+        height:80%;
+        position: absolute;
+        top:10%;
+        left:0px;
+        background:rgba(0,0,0,0.3);
+
+
+
+        color:white;
+    }
+    .registerItems{
+        width:90%;
+        height:86%;
+        position: absolute;
+        top:7%;
+        left:5%;
+
+        list-style: none;
+
+      }
+
+    .registerUserName{
+        position: absolute;
+        top:30px;
+        left:0px;
+        background:rgba(0,0,0,0.3);
+        width:100%;
+        height:35px;
+
+
+    }
+    .registerSubmit:hover{
+        background: rgba(15, 255, 0, 0.5);
+        cursor: pointer;
+    }
+    .registerUserName i{
+             display: inline-block;
+             position: absolute;
+             top:0px;
+             left:0px;
+             width:13%;
+             height: 100%;
+
+             text-align: center;
+             line-height: 33px;
+             font-size:25px;
+         }
+    .registerUserName input{
+        padding-left: 10px;
+        display: inline-block;
+        position: absolute;
+        top:0px;
+        left:13%;
+        width:65%;
+        height: 100%;
+        background:rgba(0,0,0,0.3);
+        border:none;
+        outline: none;
+        font-size:20px;
+
+    }
+   .registerUserEmail{
+       position: absolute;
+       top:80px;
+       left:0px;
+       background:rgba(0,0,0,0.3);
+       width:100%;
+       height:35px;
+   }
+
+   .registerUserPassword{
+       position: absolute;
+       top:130px;
+       left:0px;
+       background:rgba(0,0,0,0.3);
+       width:100%;
+       height:35px;
+   }
+   .registerConfirmPassword{
+       position: absolute;
+       top:185px;
+       left:0px;
+       background:rgba(0,0,0,0.3);
+       width:100%;
+       height:35px;
+   }
+   .registerSubmit{
+       position: absolute;
+       top:235px;
+       left:10%;
+       background:rgba(0,0,0,0.3);
+       width:80%;
+       height:35px;
+       border-radius: 5px;
+       color:white;
+       font-size: 20px;
+       line-height: 35px;
+       text-align: center;
+       transition-duration: 0.8s;
+   }
+   .registerLogin{
+       position: absolute;
+       bottom:0px;
+       left:0%;
+       background:rgba(0,0,0,0.3);
+       width:100%;
+       height:50px;
+
+       color:white;
+       font-size: 14px;
+       line-height: 50px;
+       text-align: center;
+
+   }
+    .registerUserPassword i , .registerConfirmPassword i , .registerUserEmail i{
+        display: inline-block;
+        position: absolute;
+        top:0px;
+        left:0px;
+        width:13%;
+        height: 100%;
+
+        text-align: center;
+        line-height: 33px;
+        font-size:25px;
+    }
+    .registerUserPassword input , .registerConfirmPassword input , .registerUserEmail input{
+        display: inline-block;
+        position: absolute;
+        top:0px;
+        left:13%;
+        width:65%;
+        height: 100%;
+        background:rgba(0,0,0,0.3);
+        border:none;
+        outline: none;
+        font-size:20px;
+        padding-left:10px;
+    }
+    .registerItems li span {
+        display: inline-block;
+        position: absolute;
+        top:0px;
+        left:78%;
+        width:22%;
+        height: 100%;
+
+        border:none;
+        outline: none;
+        font-size:10px;
+        line-height: 35px;
+        text-align: center;
+        color: white;
+
+    }

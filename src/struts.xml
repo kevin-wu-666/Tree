@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<include file="struts2-TreeContent.xml"></include>
+	<include file="struts2-TreeNode.xml"></include>
+	<include file="struts2-User.xml"></include>
+	<include file="struts2-Upload.xml"></include>
+</struts>    

@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+body {
+
+    color: #5a5a5a;
+    background: rgba(126, 156, 255, 0.4);
+}
+
+
+
+.navbar-wrapper {
+    position:absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+
+}
+
+
+.navbar-brand img{
+    display: inline;
+
+}
+#navbar{
+    margin-right: 20px;
+}
+
+
+
+.navbar-wrapper > .container {
+    padding-right: 0;
+    padding-left: 0;
+}
+.navbar-wrapper .navbar {
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+    background:rgba(0,0,0,0.8);
+}
+.navbar-wrapper .navbar .container {
+    width: auto;
+}
+
+
+
+
+
+
+/*powerby*/
+section{
+	   background:gray;
+	    position:absoulte;
+	    bottom:0px;
+	    margin-bottom:0px;
+	padding-bottom:0px;
+}
+#footer{
+	
+    width:100%;
+    background:gray;
+  
+
+}
+#footer a{
+    color: #2b2b2b;
+}
+#footer a i{
+    font-size:30px;
+    padding-top:20px;
+
+}
+#footer a i:hover{
+    color: white;
+    transition-duration: 0.3s;
+}
+#footer #power{
+    text-align: center;
+}
+#footer #power p{
+
+    padding-top:20px;
+    color:white;
+    
+}
+#indexTitle{
+   /* background:white;*/
+    height: 100px;
+    margin-bottom:30px;
+    text-align: center;
+    border-bottom: 5px dotted gray;
+    border-top: 5px dotted gray;
+}
+#indexTitle i:hover{
+    color:rgba(255,255,255,0.5);
+    transition: all 0.5s;
+}
+#indexTitle h2{
+    line-height: 80px;
+    display: inline;
+    font-family: "隶书";
+    font-size:36px;
+
+
+  
+}
+/*aboutus css*/
+
+#aboutus{
+
+
+    background:url(../img/map.png);
+    background-size: cover;
+}
+#aboutus .lvjing{
+    padding-top:40px;
+    padding-bottom:60px;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.65);
+
+    color:white;
+}
+#aboutus .lvjing h3{
+    text-align:center;
+    font-size: 30px;
+    font-family: '隶书';
+    padding-bottom: 30px;
+}
+#aboutus .lvjing p{
+    line-height: 25px;
+    margin:25px auto;
+}
+#aboutus .lvjing form span{
+    color:rgba(0,0,0,0.65);
+}
+#aboutus .lvjing form .btn{
+    width: 150px;
+    border-radius:0;
+}
+#aboutus .lvjing form .btn:hover{
+  background:rgba(30,62,30,0.81);
+}
+.choose{
+cursor: pointer;
+}
+
+
+
