@@ -367,7 +367,7 @@ function addContent(treeNode,content){
             alert("必填项不能为空！");
         }else{
             $.ajax({
-                type:"get",
+                type:"post",
                 url:"treeContent/addContent",
                 data:{id:treeNode.id,content:addContents},
                 success:function(){
@@ -574,8 +574,9 @@ function modifyContent(treeNode,content){
                 if(updateContents==''||updateContents==null){
                     alert('修改的内容不能为空!  ');
                 }else{
+                	console.log(updateContents);
                     $.ajax({
-                        type:'get',
+                        type:'post',
                         url:'treeContent/modifyContent',
                         data:{id:treeNode.id,content:updateContents},
                         success: function (data) {
