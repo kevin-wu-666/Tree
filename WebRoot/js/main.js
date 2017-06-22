@@ -2,7 +2,14 @@
 
 var ModifyDeleteCont='';
 var ModifyDeleteTreeNode='';
-var demoMsg =$('#treeDemo');
+var demoMsg = {
+			async:"正在进行异步加载，请等一会儿再点击...",
+			expandAllOver: "全部展开完毕",
+			asyncAllOver: "后台异步加载完毕",
+			asyncAll: "已经异步加载完毕，不再重新加载",
+			expandAll: "已经异步加载完毕，使用 expandAll 方法"
+		};
+
 var setting = {
     async: {
         enable: true,
@@ -68,7 +75,7 @@ function beforeAsync() {
 
 			if (curAsyncCount <= 0) {
 				if (curStatus != "init" && curStatus != "") {
-					$("#treeDemo").text((curStatus == "expand") ? demoMsg.expandAllOver : demoMsg.asyncAllOver);
+				
 					asyncForAll = true;
 				}
 				curStatus = "";
@@ -86,83 +93,101 @@ function beforeAsync() {
 
 		var curStatus = "init", curAsyncCount = 0, asyncForAll = false,
 		goAsync = false;
-		function expandAll() {
+		function expandAll(zTree) {
 			if (!check()) {
 				return;
 			}
-			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			// var zTree = $.fn.zTree.getZTreeObj("treeDemo");
 			if (asyncForAll) {
-				$("#treeDemo").text(demoMsg.expandAll);
+				
 				zTree.expandAll(true);
 			} else {
-				expandNodes(zTree.getNodes());
+//				expandNodes(zTree.getNodes(),zTree);
+                  
+					var nodes = zTree.getNodes();
+					if (nodes.length>0) {
+						  for(var i=0;i<nodes.length;i++){
+						  	zTree.expandNode(nodes[i], true, true, true);
+						  }
+						
+					    }
 				if (!goAsync) {
-					$("#treeDemo").text(demoMsg.expandAll);
+			
 					curStatus = "";
 				}
 			}
 		}
-		function expandNodes(nodes) {
-			if (!nodes) return;
-			curStatus = "expand";
-			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
-			for (var i=0, l=nodes.length; i<l; i++) {
-				zTree.expandNode(nodes[i], true, false, false);
-				if (nodes[i].isParent && nodes[i].zAsync) {
-					expandNodes(nodes[i].children);
-				} else {
-					goAsync = true;
-				}
-			}
-		}
+//		function expandNodes(nodes,zTree) {
+//			
+//			if (!nodes) return;
+//			curStatus = "expand";
+//			// var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+//			for (var i=0, l=nodes.length; i<l; i++) {
+//				zTree.expandNode(nodes[i], true, true, true);
+//				if (nodes[i].isParent && nodes[i].zAsync) {
+//					expandNodes(nodes[i].children,zTree);
+//				} else {
+//					goAsync = true;
+//				}
+//			}
+//		}
 
-		function asyncAll() {
+		function asyncAll(zTree) {
 			if (!check()) {
 				return;
 			}
-			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			// var zTree = $.fn.zTree.getZTreeObj("treeDemo");
 			if (asyncForAll) {
-				$("#treeDemo").text(demoMsg.asyncAll);
+			
 			} else {
-				asyncNodes(zTree.getNodes());
+				var nodes = zTree.getNodes();
+					if (nodes.length>0) {
+						  for(var i=0;i<nodes.length;i++){
+						  	zTree.expandNode(nodes[i], true, true, true);
+						  }
+						
+					    }
 				if (!goAsync) {
-					$("#treeDemo").text(demoMsg.asyncAll);
+			
 					curStatus = "";
 				}
 			}
 		}
-		function asyncNodes(nodes) {
-			if (!nodes) return;
-			curStatus = "async";
-			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
-			for (var i=0, l=nodes.length; i<l; i++) {
-				if (nodes[i].isParent && nodes[i].zAsync) {
-					asyncNodes(nodes[i].children);
-				} else {
-					goAsync = true;
-					zTree.reAsyncChildNodes(nodes[i], "refresh", true);
-				}
-			}
-		}
+//		function asyncNodes(nodes,zTree) {
+//			if (!nodes) return;
+//			curStatus = "async";
+//			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+//			for (var i=0, l=nodes.length; i<l; i++) {
+//				if (nodes[i].isParent && nodes[i].zAsync) {
+//					asyncNodes(nodes[i].children,zTree);
+//				} else {
+//					goAsync = true;
+//					zTree.reAsyncChildNodes(nodes[i], "refresh", true);
+//				}
+//			}
+//		}
 		function reset() {
 			if (!check()) {
 				return;
 			}
 			asyncForAll = false;
 			goAsync = false;
-			$("#treeDemo").text("");
+		
 			$.fn.zTree.init($("#treeDemo"), setting);
 		}
          
 		function check() {
 			if (curAsyncCount > 0) {
-				$("#treeDemo").text(demoMsg.async);
+			
+
+
 				return false;
 			}
 			return true;
 		}
 
 		
+
 
 
 
@@ -611,8 +636,9 @@ function modifyContent(treeNode,content){
 //
 
 
-
 //-----------------------------------
+// window.onload=expandAll;
+
 
 $(document).ready(function(){
     //动画
@@ -632,11 +658,30 @@ $(document).ready(function(){
     //zTree 初始化目录节点
 
           $.fn.zTree.init($("#treeDemo"), setting);
+
             //
+
+
+//		var zTree = $.fn.zTree.getZTreeObj("treeDemo"); 
+//		expandAll();
+			// $("#expandAllBtn").bind("click", expandAll);
+			// $("#asyncAllBtn").bind("click", asyncAll);
+			// $("#resetBtn").bind("click", reset);
+	       
+         
             setTimeout(function(){
+
+            	var zTree = $.fn.zTree.getZTreeObj("treeDemo"); 
             	
-            	expandAll();
-            },0);
+            	asyncAll(zTree);
+
+            },100);
+            setTimeout(function(){
+            	var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+            	
+            	expandAll(zTree);
+            },100);
+            // setTimeout(asyncAll,0);
 
     // ztree 目录初始化节点结束
 
